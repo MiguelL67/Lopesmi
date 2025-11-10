@@ -2,17 +2,14 @@ package Lopesmi.at03;
 
 import java.util.Random;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class At03Ex05 {
 public static void main(String[] args)
 {
-    int[] Tableau = new int[10];
     List<Integer> randomNumbers = new ArrayList<Integer>();
 
-    for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 11; i++)
     {
         Random random = new Random();
         int iNombre = random.nextInt(100);
@@ -24,6 +21,7 @@ public static void main(String[] args)
     System.out.println(echange(randomNumbers));
 
 }
+
 public static List<Integer> echange(List<Integer> randomNumbers)
 {
 
@@ -35,7 +33,26 @@ public static List<Integer> echange(List<Integer> randomNumbers)
 
     randomNumbers.addFirst(iLast);
     randomNumbers.addLast(iFirst);
+
+    int iSecond = randomNumbers.get(1);
+    randomNumbers.remove(1);
+    int iBlast = randomNumbers.get(8);
+    randomNumbers.remove(8);
+
+    randomNumbers.add(8,iSecond);
+    randomNumbers.add(1,iBlast);
+
+    int iThird = randomNumbers.get(2);
+    randomNumbers.remove(2);
+    int iHeight = randomNumbers.get(7);
+    randomNumbers.remove(7);
+
+    randomNumbers.add(2, iHeight);
+    randomNumbers.add(7, iThird);
+
+    //J'ai compris je vais continuer les autre exercice
     
+
     return randomNumbers;
 }
 }
